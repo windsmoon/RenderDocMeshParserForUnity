@@ -76,6 +76,8 @@ namespace Windsmoon.Tools
             mesh.normals = normals;
             mesh.uv = uvs;
             mesh.triangles = triangles;
+            mesh.RecalculateBounds();
+            mesh.RecalculateTangents();
             AssetDatabase.CreateAsset(mesh, "Assets/" + System.IO.Path.GetFileNameWithoutExtension(path) + "_" + System.DateTime.Now.Ticks + ".mesh");
             AssetDatabase.SaveAssets();
         }
